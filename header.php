@@ -30,7 +30,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 endif;
 
 wp_head(); ?>
-
+<?php zerif_bottom_head_trigger(); ?>
 </head>
 
 <?php if(isset($_POST['scrollPosition'])): ?>
@@ -42,7 +42,8 @@ wp_head(); ?>
 	<body <?php body_class(); ?> >
 
 <?php endif; 
-
+	
+	zerif_top_body_trigger();
 	global $wp_customize;
 	
 	/* Preloader */
@@ -103,9 +104,9 @@ wp_head(); ?>
 					</div>
 				</div>
 			</div>
-			<nav class="navbar-inverse site-menu">
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-nav-list navbar-nav pull-right', 'fallback_cb' => 'zerif_wp_page_menu' )); ?>
-			</nav>
+
+			<?php zerif_primary_navigation_trigger(); ?>
+
 		</div>
 		
 	</div>

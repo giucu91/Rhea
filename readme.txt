@@ -1,6 +1,6 @@
 === Rhea ===
 Contributors:		codeinwp
-Tags:				grid-layout, footer-widgets, blog, e-commerce, portfolio
+Tags:				black, gray, red, white, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready
 Requires at least:	3.3.0
 Tested up to:		4.4
 

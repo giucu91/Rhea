@@ -1,4 +1,9 @@
+<?php zerif_before_about_us_trigger(); ?>
+
 <section class="about-us" id="aboutus">
+
+	<?php zerif_top_about_us_trigger(); ?>
+
 	<div class="container">
 
 	<?php
@@ -118,7 +123,12 @@
 	</div>
 
 </div> <!-- / END CONTAINER -->
+
+	<?php zerif_bottom_about_us_trigger(); ?>
+	
 </section> <!-- END ABOUT US SECTION -->
+
+<?php zerif_after_about_us_trigger(); ?>
 
 <section class="clients">
 	<div class="clients-container">

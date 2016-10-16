@@ -16,6 +16,12 @@ function rhea_lite_setup() {
     // Zerif Hooks
 	require_once 'inc/hooks.php';
 
+	// Hooks
+	remove_action( 'zerif_primary_navigation', 'zerif_primary_navigation_function' );
+	add_action( 'zerif_primary_navigation', 'rhea_primary_navigation_function' );
+	remove_action( 'zerif_big_title_text', 'zerif_big_title_text_function' );
+	add_action( 'zerif_big_title_text', 'rhea_big_title_text_function' );
+
 }
 
 add_action('after_setup_theme', 'rhea_lite_setup', 11 );
@@ -331,3 +337,29 @@ function rhea_add_html_to_admin_footer() { ?>
 		</div>
 	</div>
 <?php }
+
+// Hooks functions
+
+function rhea_primary_navigation_function() { ?>
+	<nav class="navbar-inverse site-menu">
+		<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-nav-list navbar-nav pull-right', 'fallback_cb' => 'zerif_wp_page_menu' )); ?>
+	</nav>
+<?php }
+
+function rhea_big_title_text_function() {
+
+	$zerif_bigtitle_title = get_theme_mod('zerif_bigtitle_title',__('<strong>Rhea</strong> is super awesome','rhea'));
+	if( !empty($zerif_bigtitle_title) ):
+		echo '<h1 class="intro-text">'.wp_kses_post( $zerif_bigtitle_title ).'</h1>';
+	elseif ( isset( $wp_customize ) ):
+		echo '<h1 class="intro-text zerif_hidden_if_not_customizer"></h1>';
+	endif;	
+
+	$rhea_bigtitle_description = get_theme_mod('rhea_description',__('And is build on <u>Zerif Lite</u> the most popular one page theme from WordPress.org','rhea'));
+	if( !empty($rhea_bigtitle_description) ):
+		echo '<p class="intro-description">'.wp_kses_post( $rhea_bigtitle_description ).'</p>';
+	elseif ( isset( $wp_customize ) ):
+		echo '<p class="intro-description zerif_hidden_if_not_customizer"></p>';
+	endif;
+	
+}

@@ -7,7 +7,7 @@
 ?>
 
 </div><!-- .site-content -->
-
+<?php zerif_before_footer_trigger(); ?>
 <?php 
 	if(is_active_sidebar( 'zerif-sidebar-footer' ) || is_active_sidebar( 'zerif-sidebar-footer-2' ) || is_active_sidebar( 'zerif-sidebar-footer-3' )):
 		echo '<div class="footer-widget-wrap"><div class="container">';
@@ -29,10 +29,10 @@
 		echo '</div></div>';
 	endif;
 ?>
-
 <footer id="footer" role="contentinfo">
 	<div class="bottom-footer">
 		<div class="container">
+			<?php zerif_top_footer_trigger(); ?>
 			<div class="row">
 				<div class="col-md-4 col-xs-12 pull-right">
 					<?php
@@ -93,16 +93,19 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
+			<?php zerif_bottom_footer_trigger(); ?>
 		</div>
 	</div>
 </footer> <!-- / END FOOOTER  -->
 
+<?php zerif_after_footer_trigger(); ?>
 
 	</div><!-- mobile-bg-fix-whole-site -->
 </div><!-- .mobile-bg-fix-wrap -->
 
 
 <?php wp_footer(); ?>
+<?php zerif_bottom_body_trigger(); ?>
 
 </body>
 
