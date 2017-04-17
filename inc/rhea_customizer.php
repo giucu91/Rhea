@@ -22,7 +22,7 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 			$clients_section = 'zerif_aboutus_clients_title_section';
 		}else{
 			$hero_panel = 'panel_big_title';
-			$focus_panel = 'panel_ourfocus';
+			$focus_panel = 'sidebar-widgets-sidebar-ourfocus';
 			$hero_text_section = 'zerif_bigtitle_section';
 			$bottom_button_ribbon = 'zerif_bottomribbon_section';
 			$about_us_section = 'zerif_aboutus_main_section';
@@ -36,7 +36,12 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 
 		// Change customize panels' title
 		$wp_customize->get_panel($hero_panel)->title = "Hero Section";
-		$wp_customize->get_panel($focus_panel)->title  = "Features Section";
+
+		// Our focus section
+		$our_focus_section = $wp_customize->get_section( 'sidebar-widgets-sidebar-ourfocus' );
+		if ( ! empty( $our_focus_section ) ) {
+			$our_focus_section->title = __( 'Features Section', 'zerif-lite' );
+		}
 
 		$wp_customize->add_setting( 'rhea_parallax_show', array(
 			'sanitize_callback' => 'zerif_sanitize_checkbox',
@@ -51,11 +56,11 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 		));
 		
 		// Hero Section
-		$wp_customize->get_setting('zerif_bigtitle_title')->default = __('RHEA IS SUPER AWESOME','rhea');
+		$wp_customize->get_setting('zerif_bigtitle_title_2')->default = __('RHEA IS SUPER AWESOME','rhea');
 
 		// Left Button
-		$wp_customize->get_setting('zerif_bigtitle_redbutton_label')->default = __('Explore','rhea');
-		$wp_customize->get_control('zerif_bigtitle_redbutton_label')->label = __('Left Button Label','rhea');
+		$wp_customize->get_setting('zerif_bigtitle_redbutton_label_2')->default = __('Explore','rhea');
+		$wp_customize->get_control('zerif_bigtitle_redbutton_label_2')->label = __('Left Button Label','rhea');
 
 		$wp_customize->get_setting('zerif_bigtitle_redbutton_url')->default = __('#focus','rhea');
 		$wp_customize->get_control('zerif_bigtitle_redbutton_url')->label = __('Left Button URL','rhea');
@@ -434,9 +439,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 		}else{
 			$wp_customize->remove_panel('panel_ribbons');
 
-			$wp_customize->get_section('zerif_bottomribbon_section')->panel = '';
+			$wp_customize->get_section('zerif_bottomribbon_section')->panel = 'zerif_frontpage_sections_panel';
 			$wp_customize->get_section('zerif_bottomribbon_section')->title = 'Top CTA Section';
-			$wp_customize->get_section('zerif_bottomribbon_section')->priority = 33;
+			$wp_customize->get_section('zerif_bottomribbon_section')->priority = 31;
 
 			// Top CTA sections
 			// Section Title
@@ -483,7 +488,7 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 		));
 
 		if ( $currentThemeName != 'Zerif PRO' ) {
-			$wp_customize->get_section('zerif_rightribbon_section')->panel = '';
+			$wp_customize->get_section('zerif_rightribbon_section')->panel = 'zerif_frontpage_sections_panel';
 			$wp_customize->get_section('zerif_rightribbon_section')->title = 'Bottom CTA Section';
 			$wp_customize->get_section('zerif_rightribbon_section')->priority = 36;
 
