@@ -136,7 +136,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 			$wp_customize->remove_section( 'zerif_aboutus_feature4_section' );
 
 			// Colors
-			$wp_customize->add_setting( 'rhea_left_side_headline' );
+			$wp_customize->add_setting( 'rhea_left_side_headline', array(
+				'sanitize_callback' => 'zerif_sanitize_input',
+			) );
 
 	        $wp_customize->add_control( new Rhea_Content_Control( $wp_customize, 'rhea_left_side_headline', array(
 				'section'  	=> 'zerif_aboutus_colors_section',
@@ -223,7 +225,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 			);
 
 
-			$wp_customize->add_setting( 'rhea_right_side_headline' );
+			$wp_customize->add_setting( 'rhea_right_side_headline', array(
+				'sanitize_callback' => 'zerif_sanitize_input',
+			) );
 
 	        $wp_customize->add_control( new Rhea_Content_Control( $wp_customize, 'rhea_right_side_headline', array(
 				'section'  	=> 'zerif_aboutus_colors_section',
@@ -279,7 +283,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 			$wp_customize->remove_setting('zerif_aboutus_number_color');
 			$wp_customize->remove_control('zerif_aboutus_number_color');
 
-			$wp_customize->add_setting( 'rhea_clients_headline' );
+			$wp_customize->add_setting( 'rhea_clients_headline', array(
+				'sanitize_callback' => 'zerif_sanitize_input',
+			) );
 
 	        $wp_customize->add_control( new Rhea_Content_Control( $wp_customize, 'rhea_clients_headline', array(
 				'section'  	=> 'zerif_aboutus_colors_section',
@@ -344,7 +350,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 	        $wp_customize->get_section('zerif_bottombribbon_section')->title = __('Content','rhea');
 
 	        // Colors
-	        $wp_customize->add_setting( 'rhea_first_button_top_cta' );
+	        $wp_customize->add_setting( 'rhea_first_button_top_cta', array(
+				'sanitize_callback' => 'zerif_sanitize_input',
+			) );
 	        $wp_customize->add_control( new Rhea_Content_Control( $wp_customize, 'rhea_first_button_top_cta', array(
 				'section'  	=> 'rhea_color_top_cta',
 				'label'		=> __( 'First Button Colors', 'rhea' ),
@@ -368,7 +376,9 @@ if( !function_exists( 'rhea_lite_customizer' ) ) {
 	        $wp_customize->get_control('zerif_ribbon_button_button_color_hover')->section = 'rhea_color_top_cta';
 	        $wp_customize->get_setting('zerif_ribbon_button_button_color_hover')->default = '#2bb6b6';
 
-	        $wp_customize->add_setting( 'rhea_second_button_top_cta' );
+	        $wp_customize->add_setting( 'rhea_second_button_top_cta', array(
+				'sanitize_callback' => 'zerif_sanitize_input',
+			) );
 	        $wp_customize->add_control( new Rhea_Content_Control( $wp_customize, 'rhea_second_button_top_cta', array(
 				'section'  	=> 'rhea_color_top_cta',
 				'label'		=> __( 'Second Button Colors', 'rhea' ),
