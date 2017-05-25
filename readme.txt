@@ -1,15 +1,14 @@
 === Rhea ===
-Contributors:		codeinwp
-Tags:				black, gray, red, white, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready
+Contributors:		giucu91
+Tags:				one-column, two-columns, right-sidebar,full-width-template,rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, footer-widgets, portfolio, e-commerce, blog
 Requires at least:	3.3.0
-Tested up to:		4.4
+Tested up to:		4.7.5
 
 Rhea
 == Description ==
 Rhea is a modern responsive Wordpress Theme. It's perfect for web agencies, digital studios, corporate, product showcase, personal and business portfolio.
 
 = License =
-Rhea WordPress theme, Copyright (C) 2014 ThemeIsle.com
 Rhea WordPress theme is licensed under the GPL3.
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.

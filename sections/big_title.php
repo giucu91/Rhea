@@ -1,1 +1,106 @@
-<header id="home" class="header rhea-header">	<div id="main-rhea-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">		<div class="container">			<div class="navbar-header responsive-logo">				<?php					$zerif_logo = get_theme_mod('zerif_logo');					if(isset($zerif_logo) && $zerif_logo != ""):						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';							echo '<img src="'.esc_url( $zerif_logo ).'" alt="'.esc_attr( get_bloginfo('title') ).'">';						echo '</a>';					else:						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';							if( file_exists(get_stylesheet_directory()."/images/logo.png")):								echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.esc_attr( get_bloginfo('title') ).'">';							else:								echo '<img src="'.get_template_directory_uri().'/images/logo.png" alt="'.esc_attr( get_bloginfo('title') ).'">';							endif;						echo '</a>';					endif;				?>			</div>			<?php if ( has_nav_menu('homepage-top') ) { ?>				<div class="burger-menu-container">					<div id="nav-icon" class="burger-menu-icon">					  	<span></span>					  	<span></span>					  	<span></span>					  	<span></span>					  	<span></span>					  	<span></span>					</div>				</div>			<?php } ?>		</div>	</div>	<!-- Rhea Parallax -->	<?php	$zerif_parallax_img1 = get_theme_mod('zerif_parallax_img1',get_template_directory_uri() . '/images/background1.jpg');	$zerif_parallax_img2 = get_theme_mod('zerif_parallax_img2',get_template_directory_uri() . '/images/background2.png');	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');	if ( $zerif_parallax_use == 1 && (!empty($zerif_parallax_img1) || !empty($zerif_parallax_img2)) ) {		echo '<ul id="parallax_move">';				if( !empty($zerif_parallax_img1) ) { 				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . esc_url( $zerif_parallax_img1 ) . ');"></li>';			}			if( !empty($zerif_parallax_img2) ) { 				echo '<li class="layer layer2" data-depth="0.20" style="background-image: url(' . esc_url( $zerif_parallax_img2 ) . ');"></li>';			}		echo '</ul>';	}	?>	<!-- / END TOP BAR -->	<div class="home-header-wrap">	<?php		global $wp_customize;		echo '<div class="header-content-wrap">';			echo '<div class="container">';			zerif_big_title_text_trigger();			$zerif_bigtitle_redbutton_label = get_theme_mod('zerif_bigtitle_redbutton_label',__('Explore','rhea'));			$zerif_bigtitle_redbutton_url = get_theme_mod('zerif_bigtitle_redbutton_url', esc_url( home_url( '/' ) ).'#focus');			$zerif_bigtitle_greenbutton_label = get_theme_mod('zerif_bigtitle_greenbutton_label',__("See Pro Version",'rhea'));			$zerif_bigtitle_greenbutton_url = get_theme_mod('zerif_bigtitle_greenbutton_url',esc_url( home_url( '/' ) ).'#focus');			if( (!empty($zerif_bigtitle_redbutton_label) && !empty($zerif_bigtitle_redbutton_url)) || (!empty($zerif_bigtitle_greenbutton_label) && !empty($zerif_bigtitle_greenbutton_url))):				echo '<div class="buttons">';					zerif_big_title_buttons_top_trigger();					if ( !empty($zerif_bigtitle_redbutton_label) && !empty($zerif_bigtitle_redbutton_url) ):						echo '<a href="'.esc_url( $zerif_bigtitle_redbutton_url ).'" class="btn btn-primary custom-button fill-button hero-left-button">'.wp_kses_post( $zerif_bigtitle_redbutton_label ).'</a>';					elseif ( isset( $wp_customize ) ):						echo '<a href="" class="btn btn-primary custom-button red-btn zerif_hidden_if_not_customizer  hero-left-button"></a>';					endif;					if ( !empty($zerif_bigtitle_greenbutton_label) && !empty($zerif_bigtitle_greenbutton_url) ):						echo '<a href="'.esc_url( $zerif_bigtitle_greenbutton_url ).'" class="btn btn-primary custom-button outline-btn hero-right-button">'.wp_kses_post( $zerif_bigtitle_greenbutton_label ).'</a>';					elseif ( isset( $wp_customize ) ):						echo '<a href="" class="btn btn-primary custom-button green-btn zerif_hidden_if_not_customizer hero-right-button"></a>';					endif;					zerif_big_title_buttons_bottom_trigger();				echo '</div>';			endif;			echo '</div>';		echo '</div><!-- .header-content-wrap -->';		echo '<div class="clear"></div>';	?>	</div>	<div class='icon-scroll'></div></header>
+<?php
+
+$zerif_slider_shortcode = get_theme_mod( 'zerif_bigtitle_slider_shortcode' );
+
+echo '<div class="' . ( !empty( $zerif_slider_shortcode ) ? 'home-slider-plugin' : '' ) . ' home-header-wrap rhea-header">';
+
+	$zerif_parallax_img1 = get_theme_mod('zerif_parallax_img1',get_template_directory_uri() . '/images/background1.jpg');
+	$zerif_parallax_img2 = get_theme_mod('zerif_parallax_img2',get_template_directory_uri() . '/images/background2.png');
+	$zerif_parallax_use = get_theme_mod('zerif_parallax_show');
+
+    if ( ! empty( $zerif_slider_shortcode ) ) {
+        echo do_shortcode( $zerif_slider_shortcode );
+    } else {
+
+	    if ( $zerif_parallax_use == 1 && ( ! empty( $zerif_parallax_img1 ) || ! empty( $zerif_parallax_img2 ) ) ) {
+		    echo '<ul id="parallax_move">';
+		    if ( ! empty( $zerif_parallax_img1 ) ) {
+			    echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . esc_url( $zerif_parallax_img1 ) . ');"></li>';
+		    }
+		    if ( ! empty( $zerif_parallax_img2 ) ) {
+			    echo '<li class="layer layer2" data-depth="0.20" style="background-image: url(' . esc_url( $zerif_parallax_img2 ) . ');"></li>';
+		    }
+
+		    echo '</ul>';
+	    }
+
+	    echo '<div class="header-content-wrap">';
+
+	    echo '<div class="container">';
+
+	    zerif_big_title_text_trigger();
+
+	    $zerif_bigtitle_redbutton_label_default = get_theme_mod( 'zerif_bigtitle_redbutton_label' );
+
+	    if ( ! empty ( $zerif_bigtitle_redbutton_label_default ) ) {
+
+		    $zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label_2', $zerif_bigtitle_redbutton_label_default );
+
+	    } elseif ( current_user_can( 'edit_theme_options' ) ) {
+
+		    $zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label_2', __( 'Customize this button', 'zerif-lite' ) );
+
+	    } else {
+
+		    $zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label_2' );
+
+	    }
+
+	    if ( current_user_can( 'edit_theme_options' ) ) {
+
+		    $zerif_bigtitle_redbutton_url = get_theme_mod( 'zerif_bigtitle_redbutton_url', admin_url( 'customize.php?autofocus&#91;control&#93;=zerif_bigtitle_redbutton_url' ) );
+
+		    $zerif_bigtitle_greenbutton_label = get_theme_mod( 'zerif_bigtitle_greenbutton_label', __( "Customize this button", 'zerif-lite' ) );
+
+		    $zerif_bigtitle_greenbutton_url = get_theme_mod( 'zerif_bigtitle_greenbutton_url', esc_url( admin_url( 'customize.php?autofocus&#91;control&#93;=zerif_bigtitle_greenbutton_url' ) ) );
+
+	    } else {
+
+		    $zerif_bigtitle_redbutton_url = get_theme_mod( 'zerif_bigtitle_redbutton_url' );
+
+		    $zerif_bigtitle_greenbutton_label = get_theme_mod( 'zerif_bigtitle_greenbutton_label' );
+
+		    $zerif_bigtitle_greenbutton_url = get_theme_mod( 'zerif_bigtitle_greenbutton_url' );
+
+	    }
+
+	    if ( ( ! empty( $zerif_bigtitle_redbutton_label ) && ! empty( $zerif_bigtitle_redbutton_url ) ) || ( ! empty( $zerif_bigtitle_greenbutton_label ) && ! empty( $zerif_bigtitle_greenbutton_url ) ) ):
+
+		    echo '<div class="buttons">';
+
+		    zerif_big_title_buttons_top_trigger();
+
+		    if ( ! empty( $zerif_bigtitle_redbutton_label ) && ! empty( $zerif_bigtitle_redbutton_url ) ):
+
+			    echo '<a href="' . esc_url( $zerif_bigtitle_redbutton_url ) . '" class="btn btn-primary custom-button fill-button hero-left-button">' . wp_kses_post( $zerif_bigtitle_redbutton_label ) . '</a>';
+
+            elseif ( is_customize_preview() ):
+
+			    echo '<a href="" class="btn btn-primary custom-button zerif_hidden_if_not_customizer hero-left-button"></a>';
+
+		    endif;
+
+		    if ( ! empty( $zerif_bigtitle_greenbutton_label ) && ! empty( $zerif_bigtitle_greenbutton_url ) ):
+
+			    echo '<a href="' . esc_url( $zerif_bigtitle_greenbutton_url ) . '" class="btn btn-primary custom-button outline-btn hero-right-button">' . wp_kses_post( $zerif_bigtitle_greenbutton_label ) . '</a>';
+
+            elseif ( is_customize_preview() ):
+
+			    echo '<a href="" class="btn btn-primary custom-button zerif_hidden_if_not_customizer hero-right-button"></a>';
+
+		    endif;
+
+		    zerif_big_title_buttons_bottom_trigger();
+
+		    echo '</div>';
+
+	    endif;
+
+	    echo '</div>';
+
+	    echo '</div><!-- .header-content-wrap -->';
+	    echo '<div class="clear"></div>';
+    }
+?>
+
+</div>

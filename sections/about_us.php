@@ -40,84 +40,14 @@
 			<div class="progressbar-container">
 				<?php if ( is_active_sidebar( 'sidebar-progress-bar' ) ) {
 					dynamic_sidebar( 'sidebar-progress-bar' );
-				}else{ ?>
-					<div class="progress-holder">
-						<h3><?php _e('CREATIVITY', 'rhea'); ?></h3>
-						<span class="completion-rate" style="width: 70%">70%</span>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-						  </div>
-						</div>
-					</div>
-					
-					<div class="progress-holder">
-						<h3><?php _e('DEVELOPMENT', 'rhea'); ?></h3>
-						<span class="completion-rate" style="width: 87%">87%</span>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
-						    <span class="sr-only">87% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-
-					<div class="progress-holder">
-						<h3><?php _e('MARKETING', 'rhea'); ?></h3>
-						<span class="completion-rate" style="width: 93%">93%</span>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
-						    <span class="sr-only">93% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-
-					<div class="progress-holder">
-						<h3><?php _e('WORDPRESS', 'rhea'); ?>/h3>
-						<span class="completion-rate" style="width: 95%">95%</span>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-						    <span class="sr-only">95% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-				<?php } ?>
+				} ?>
 			</div>
 		</div>
 
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 aboutus_boxes">
 			<?php if ( is_active_sidebar( 'sidebar-right-aboutus' ) ) {
 				dynamic_sidebar( 'sidebar-right-aboutus' );
-			}else{ ?>
-				<div class="about_us_box">
-					<div class="header_aboutus_box">
-						<div class="pull-left icon-holder">
-							<i class="fa fa-lightbulb-o"></i>
-						</div>
-						<div class="aboutus_titles pull-left">
-							<h4><?php _e('Our History', 'rhea'); ?></h4>
-							<p><?php _e('Company was founded in 2016', 'rhea'); ?></p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="aboutus_content">
-						<p><?php _e('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.', 'rhea'); ?></p>
-					</div>
-				</div>
-				<div class="about_us_box">
-					<div class="header_aboutus_box">
-						<div class="pull-left icon-holder">
-							<i class="fa fa-lightbulb-o"></i>
-						</div>
-						<div class="aboutus_titles pull-left">
-							<h4><?php _e('Our Mission', 'rhea'); ?></h4>
-							<p><?php _e('Company was founded in 2016', 'rhea'); ?></p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="aboutus_content">
-						<p><?php _e('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.', 'rhea'); ?></p>
-					</div>
-				</div>
-			<?php } ?>
+			} ?>
 		</div>
 
 	</div>

@@ -3,11 +3,12 @@
  Theme URI:    https://georgeciobanu.com/rhea/
  Description:  Rhea is a free one page Wordpress theme. It's perfect for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer.Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Rhea is ecommerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax, full screen image is one of the best business themes.
  Author:       George Ciobanu
+ Author URI:   https://profiles.wordpress.org/giucu91
  Template:     zerif-lite
- Version:      1.0.0
+ Version:      1.0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         one-column, two-columns, right-sidebar,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, footer-widgets, portfolio
+ Tags:         one-column, two-columns, right-sidebar,full-width-template,rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, footer-widgets, portfolio, e-commerce, blog
  Text Domain:  rhea
 */
 
@@ -56,10 +57,19 @@ section .section-header {
 }
 /* Header */
 
-.rhea-header {
+.home-header-wrap.rhea-header {
 	height: 100vh;
-	position: relative;
-	background-position: center center;
+    position: relative;
+    background-position: center center;
+    margin-bottom: 0 !important;
+    top: auto;
+    left: auto;
+    transform: translate(0,0);
+    display: flex;
+    align-items: center;
+}
+#home {
+  margin-bottom: 0 !important;
 }
 .rhea-header:before {
 	content: "";
@@ -83,6 +93,7 @@ div#main-rhea-nav {
 .rhea-header .header-content-wrap {
 	padding: 0;
 	background: transparent;
+  width: 100%;
 }
 .home-header-wrap {
 	width: 100%;
@@ -630,7 +641,7 @@ header#sticky-header {
     line-height: inherit;
     padding: 20px 0;
 }
-.navbar-inverse .navbar-nav > li > a {
+.rhea-subheader .navbar-inverse .navbar-nav > li > a {
 	color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
@@ -1438,5 +1449,36 @@ body .separator-one .green-btn:hover {
 .entry-footer a:hover,
 .nav-links a,
 article .posted-on a:hover {
+  color: #2bb6b6;
+}
+
+
+/* New CSS */
+
+.rhea-front-page div#main-nav,
+.rhea-front-page div#main-nav.fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+}
+.rhea-front-page div#main-nav .container {
+  position: relative;
+  margin-top: 20px;
+}
+.rhea-front-page .navbar-inverse .navbar-brand p.site-description, 
+.rhea-front-page .navbar-inverse .navbar-brand .site-title,
+.rhea-front-page .navbar-inverse .navbar-brand .site-title a {
+  color: #fff;
+}
+.navbar-inverse .navbar-brand .site-title-tagline-wrapper .site-title > a:hover, 
+.navbar-inverse .navbar-brand .site-title-tagline-wrapper .site-title > a:focus,
+.focus a.zerif-default-links:hover, 
+.about-us a.zerif-default-links:hover, 
+.our-team a.zerif-default-links:hover, 
+.testimonial a.zerif-default-links:hover, 
+.contact-us a.zerif-default-links:hover {
   color: #2bb6b6;
 }
