@@ -40,68 +40,69 @@ function rhea_testimonials_header_subtitle_function() {
 
 }
 
-// PRO
-$currentTheme = wp_get_theme();
-$currentThemeName = $currentTheme->parent();
-if ( $currentThemeName == 'Zerif PRO' ) {
-	add_filter( 'zerif_portofolio_box_underline_color_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_aboutus_background_filter', 'rhea_white_color' );
-	add_filter( 'zerif_testimonials_background_filter', 'rhea_white_color' );
-	add_filter( 'zerif_footer_widgets_title_filter', 'rhea_text_color' );
-	add_filter( 'zerif_testimonials_header_filter', 'rhea_text_color' );
-	add_filter( 'zerif_links_color_hover_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_footer_widgets_title_border_bottom_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_ourteam_background_filter', 'rhea_blue_color' );
-	add_filter( 'zerif_testimonials_box_color_filter', 'rhea_blue_color' );
-	add_filter( 'zerif_navbar_color_filter', 'rhea_darker_color' );
-	add_filter( 'zerif_ribbon_button_background_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_ribbon_button_background_hover_filter', 'rhea_white_color' );
-	add_filter( 'zerif_ribbon_button_button_color_filter', 'rhea_white_color' );
-	add_filter( 'zerif_ribbon_button_button_color_hover_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_ribbon_background_filter', 'rhea_blue_color' );
-	add_filter( 'zerif_ribbonright_background_filter', 'rhea_primary_color' );
-
-
-	add_filter( 'zerif_contacus_background_filters', 'rhea_white_color' );
-	add_filter( 'zerif_contacus_header_filter', 'rhea_text_color' );
-	add_filter( 'zerif_contacus_button_background_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_contacus_button_background_hover_filter', 'rhea_blue_color' );
-	add_filter( 'zerif_contacus_button_color_hover_filter', 'rhea_primary_color' );
-
-	add_filter( 'zerif_ribbonright_button_background_filter', 'rhea_transparent_color' );
-	add_filter( 'zerif_ribbonright_button_background_hover_filter', 'rhea_white_color' );
-	add_filter( 'zerif_ribbonright_button_button_color_hover_filter', 'rhea_primary_color' );
-
-	// Package Section 
-	add_filter( 'zerif_packages_background_filter', 'rhea_blue_color' );
-	add_filter( 'zerif_packages_header_filter', 'rhea_text_color' );
-	add_filter( 'zerif_package_price_background_color_filter', 'rhea_darker_color' );
-
-	// Subscribe Section 
-	add_filter( 'zerif_subscribe_background_filter', 'rhea_primary_color' );
-
-
-
-	add_filter( 'zerif_footer_socials_hover_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_ourteam_socials_hover_filter', 'rhea_primary_color' );
-	add_filter( 'zerif_titles_bottomborder_color_filter', 'rhea_primary_color' );
-
-	function rhea_primary_color() {
-		return '#2bb6b6';
-	}
-	function rhea_white_color() {
-		return '#fff';
-	}
-	function rhea_text_color() {
-		return '#404040';
-	}
-	function rhea_darker_color() {
-		return 'rgb(35, 40, 45)';
-	}
-	function rhea_blue_color() {
-		return '#f4f7f9';
-	}
-	function rhea_transparent_color() {
-		return 'rgba( 255,255,255,0 )';
-	}
+function rhea_return_accent_color(){
+	return '#2bb6b6';
 }
+
+function rhea_return_white(){
+	return '#fff';
+}
+
+function rhea_return_black(){
+	return '#23282d';
+}
+
+function rhea_return_title_color(){
+	return '#404040';
+}
+
+function rhea_return_white_blue(){
+	return '#f4f7f9';
+}
+
+function rhea_transparent_color() {
+	return 'rgba( 255,255,255,0 )';
+}
+
+function rhea_return_grey(){
+	return '#777';
+}
+
+add_filter( 'zerif_portofolio_box_underline_color_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_footer_socials_hover_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_footer_widgets_title_border_bottom_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_titles_bottomborder_color_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_links_color_hover_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_buttons_background_color_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_buttons_background_color_hover_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_ourteam_socials_hover_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_ribbonright_background_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_ribbonright_button_button_color_hover_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_ribbon_button_background_filter', 'rhea_return_accent_color' );
+add_filter( 'zerif_contacus_button_background_filter', 'rhea_return_accent_color' );
+
+add_filter( 'zerif_footer_socials_background_filter', 'rhea_return_white' );
+add_filter( 'zerif_testimonials_background_filter', 'rhea_return_white' );
+add_filter( 'zerif_ribbonright_text_color_filter', 'rhea_return_white' );
+add_filter( 'zerif_ribbonright_button_background_hover_filter', 'rhea_return_white' );
+add_filter( 'zerif_ribbonright_button_button_color_filter', 'rhea_return_white' );
+add_filter( 'zerif_aboutus_background_filter', 'rhea_return_white' );
+add_filter( 'zerif_contacus_background_filters', 'rhea_return_white' );
+
+add_filter( 'zerif_footer_background_filter', 'rhea_return_black' );
+add_filter( 'zerif_navbar_color_filter', 'rhea_return_black' );
+
+add_filter( 'zerif_footer_widgets_title_filter', 'rhea_return_title_color' );
+add_filter( 'zerif_testimonials_header_filter', 'rhea_return_title_color' );
+add_filter( 'zerif_testimonials_author_filter', 'rhea_return_title_color' );
+add_filter( 'zerif_contacus_header_filter', 'rhea_return_title_color' );
+
+add_filter( 'zerif_ourteam_background_filter', 'rhea_return_white_blue' );
+add_filter( 'zerif_testimonials_box_color', 'rhea_return_white_blue' );
+add_filter( 'zerif_ribbon_background_filter', 'rhea_return_white_blue' );
+add_filter( 'zerif_testimonials_box_color_filter', 'rhea_return_white_blue' );
+
+add_filter( 'zerif_ribbonright_button_background_filter', 'rhea_transparent_color' );
+
+add_filter( 'zerif_aboutus_title_color_filter', 'rhea_return_grey' );
+add_filter( 'zerif_testimonials_text', 'rhea_return_grey' );

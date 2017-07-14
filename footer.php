@@ -40,12 +40,12 @@
 					// open link in a new tab when checkbox "accessibility" is not ticked
 					$attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
 
-					$zerif_socials_facebook = get_theme_mod('zerif_socials_facebook','#');
-					$zerif_socials_twitter = get_theme_mod('zerif_socials_twitter','#');
-					$zerif_socials_linkedin = get_theme_mod('zerif_socials_linkedin','#');
-					$zerif_socials_behance = get_theme_mod('zerif_socials_behance','#');
-					$zerif_socials_dribbble = get_theme_mod('zerif_socials_dribbble','#');
-					$zerif_socials_instagram = get_theme_mod('zerif_socials_instagram');
+					$zerif_socials_facebook = get_theme_mod( 'zerif_socials_facebook' );
+					$zerif_socials_twitter = get_theme_mod( 'zerif_socials_twitter' );
+					$zerif_socials_linkedin = get_theme_mod( 'zerif_socials_linkedin' );
+					$zerif_socials_behance = get_theme_mod( 'zerif_socials_behance' );
+					$zerif_socials_dribbble = get_theme_mod( 'zerif_socials_dribbble' );
+					$zerif_socials_instagram = get_theme_mod( 'zerif_socials_instagram' );
 
 					if(!empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble) || !empty($zerif_socials_instagram) ):
 						echo '<ul class="social">';
@@ -87,7 +87,7 @@
 						echo '<p id="zerif-copyright" class="zerif_hidden_if_not_customizer"></p>';
 					endif;
 					
-					echo '<div class="zerif-copyright-box">Build with <a class="zerif-copyright" href="#"'.$attribut_new_tab.' rel="nofollow">Rhea </a>'.__('powered by','rhea').'<a class="zerif-copyright" href="http://wordpress.org/"'.$attribut_new_tab.' rel="nofollow"> WordPress</a></div>';
+					echo '<div class="zerif-copyright-box">Build with <a class="zerif-copyright" href="https://georgeciobanu.com/rhea/"'.$attribut_new_tab.' rel="nofollow">Rhea </a>'.__('powered by','rhea').'<a class="zerif-copyright" href="http://wordpress.org/"'.$attribut_new_tab.' rel="nofollow"> WordPress</a></div>';
 
 					?>
 				</div>

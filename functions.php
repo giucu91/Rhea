@@ -102,9 +102,7 @@ function rhea_lite_background() {
 
 	$currentTheme = wp_get_theme();
 	$currentThemeName = $currentTheme->parent();
-
 	if ( $currentThemeName == 'Zerif PRO' ) {
-
 		// [About us] Left Side
 		$left_side_background = get_theme_mod( 'rhea_left_side_background_color', '#f4f7f9' );
 		$left_side_title = get_theme_mod( 'rhea_left_side_title_color', '#404040' );
@@ -112,108 +110,97 @@ function rhea_lite_background() {
 		$left_side_hightlight = get_theme_mod( 'rhea_left_side_highlight_color', '#FFFFFF' );
 		$left_side_progressbar = get_theme_mod( 'rhea_left_side_progressbar_color', '#2bb6b6' );
 		$left_side_description = get_theme_mod( 'rhea_left_side_description_color', '#777777' );
-
 		if ( $left_side_background ) {
-			$style .="body .about-us:before { background-color: {".sanitize_hex_color( $left_side_background )."}; }";
+			$style .="body .about-us:before { background-color: ".sanitize_hex_color( $left_side_background )."; }";
 		}
 		if ( $left_side_title ) {
-			$style .="body .left-about-us h2 span { color: {".sanitize_hex_color( $left_side_title )."}; }";
+			$style .="body .left-about-us h2 span { color: ".sanitize_hex_color( $left_side_title )."; }";
 		}
 		if ( $left_side_hightlight_background ) {
-			$style .="body .left-about-us h2 span.colored { background-color: {".sanitize_hex_color( $left_side_hightlight_background )."}; }";
+			$style .="body .left-about-us h2 span.colored { background-color: ".sanitize_hex_color( $left_side_hightlight_background )."; }";
 		}
 		if ( $left_side_hightlight ) {
-			$style .="body .left-about-us h2 span.colored { color: {".sanitize_hex_color( $left_side_hightlight )."}; }";
+			$style .="body .left-about-us h2 span.colored { color: ".sanitize_hex_color( $left_side_hightlight )."; }";
 		}
 		if ( $left_side_progressbar ) {
-			$style .="body .left-about-us .progress-bar { background-color: {".sanitize_hex_color( $left_side_progressbar )."}; }";
+			$style .="body .left-about-us .progress-bar { background-color: ".sanitize_hex_color( $left_side_progressbar )."; }";
 		}
 		if ( $left_side_description ) {
-			$style .="body .about-us .left-about-us p { color: {".sanitize_hex_color( $left_side_description )."}; }";
+			$style .="body .about-us .left-about-us p { color: ".sanitize_hex_color( $left_side_description )."; }";
 		}
-
 		// [About us] Right Side
 		$right_side_icon = get_theme_mod( 'rhea_right_side_icon_color', '#777777' );
 		$right_side_description = get_theme_mod( 'rhea_right_side_description_color', '#777777' );
 		$right_side_title = get_theme_mod( 'rhea_right_side_title_color', '#404040' );
-
 		if ( $right_side_icon ) {
-			$style .="body .about_us_box .icon-holder i { color: {".sanitize_hex_color( $right_side_icon )."}; }";
+			$style .="body .about_us_box .icon-holder i { color: ".sanitize_hex_color( $right_side_icon )."; }";
 		}
 		if ( $right_side_description ) {
-			$style .="body .about-us p { color: {".sanitize_hex_color( $right_side_description )."}; }";
+			$style .="body .about-us p { color: ".sanitize_hex_color( $right_side_description )."; }";
 		}
 		if ( $right_side_title ) {
-			$style .="body .aboutus_titles h4 { color: {".sanitize_hex_color( $right_side_title )."}; }";
+			$style .="body .aboutus_titles h4 { color: ".sanitize_hex_color( $right_side_title )."; }";
 		}
-
 		// [Client' Section]
 		$clients_title = get_theme_mod( 'rhea_clients_title_color', '#404040' );
 		$clients_description = get_theme_mod( 'rhea_clients_description_color', '#777777' );
-
 		if ( $clients_title ) {
-			$style .="body .custom-clients h2 { color: {".sanitize_hex_color( $clients_title )."}; }";
+			$style .="body .custom-clients h2 { color: ".sanitize_hex_color( $clients_title )."; }";
 		}
 		if ( $clients_description ) {
-			$style .="body .custom-clients p { color: {".sanitize_hex_color( $clients_description )."}; }";
+			$style .="body .custom-clients p { color: ".sanitize_hex_color( $clients_description )."; }";
 		}
-
 		$footer_widgets = get_theme_mod( 'rhea_footer_widgets_background', '#f4f7f9' );
 		$footer_widgets_border = get_theme_mod( 'zerif_footer_widgets_title_border_bottom', '#2bb6b6' );
 		$footer_widgets_title = get_theme_mod( 'zerif_footer_widgets_title', '#404040' );
 		if ( $footer_widgets ) {
-			$style .="body .footer-widget-wrap { background-color: {".sanitize_hex_color( $footer_widgets )."} !important; }";
+			$style .="body .footer-widget-wrap { background-color: ".sanitize_hex_color( $footer_widgets )." !important; }";
 		}
 		if ( $footer_widgets_title ) {
-			$style .="body .footer-widget-wrap .widget .widget-title { color: {".sanitize_hex_color( $footer_widgets_title )."} !important; }";
+			$style .="body .footer-widget-wrap .widget .widget-title { color: ".sanitize_hex_color( $footer_widgets_title )." !important; }";
 		}
 		if ( $footer_widgets_border ) {
-			$style .="body .widget .widget-title:before { background-color: {".sanitize_hex_color( $footer_widgets_border )."} !important; }";
+			$style .="body .widget .widget-title:before { background-color: ".sanitize_hex_color( $footer_widgets_border )." !important; }";
 		}
-
 		// General Colors
 		$zerif_menu_item_color = get_theme_mod( 'zerif_menu_item_color', '#fff' );
 		if( !empty($zerif_menu_item_color) ){
-			$style.="body .navbar-inverse .navbar-nav>li>a, body .navbar-inverse .navbar-nav ul.sub-menu li a{
+			$style.="body .navbar-inverse .navbar-nav>li>a, body .navbar-inverse .navbar-nav ul.sub-menu li a {
 				color:".sanitize_hex_color( $zerif_menu_item_color ).";
 			}";
 		}
-
 		// Top CTA Section
 		$rhea_top_cta_second_background = get_theme_mod( 'rhea_top_cta_second_button_background', 'rgba( 255,255,255,.0 )' );
 		$rhea_top_cta_second_border = get_theme_mod( 'rhea_top_cta_second_button_border', '#2bb6b6' );
 		$rhea_top_cta_second_text = get_theme_mod( 'rhea_top_cta_second_button_text', '#2bb6b6' );
 		$rhea_top_cta_second_background_hover = get_theme_mod( 'rhea_top_cta_second_button_background_hover', '#2bb6b6' );
 		$rhea_top_cta_second_text_hover = get_theme_mod( 'rhea_top_cta_second_button_text_hover', '#FFF' );
-
 		if ( $rhea_top_cta_second_background ) {
-			$style .="body .separator-one .outline-btn { background-color: {".sanitize_hex_color( $rhea_top_cta_second_background )."} !important; }";
+			$style .="body .separator-one .outline-btn { background-color: ".sanitize_hex_color( $rhea_top_cta_second_background )." !important; }";
 		}
 		if ( $rhea_top_cta_second_border ) {
-			$style .="body .separator-one .outline-btn { border-color: {".sanitize_hex_color( $rhea_top_cta_second_border )."} !important; }";
+			$style .="body .separator-one .outline-btn { border-color: ".sanitize_hex_color( $rhea_top_cta_second_border )." !important; }";
 		}
 		if ( $rhea_top_cta_second_background_hover ) {
-			$style .="body .separator-one .outline-btn:hover { background-color: {".sanitize_hex_color( $rhea_top_cta_second_background_hover )."} !important;border-color: {".sanitize_hex_color( $rhea_top_cta_second_background_hover )."} !important; }";
+			$style .="body .separator-one .outline-btn:hover { background-color: ".sanitize_hex_color( $rhea_top_cta_second_background_hover )." !important;border-color: ".sanitize_hex_color( $rhea_top_cta_second_background_hover )." !important; }";
 		}
 		if ( $rhea_top_cta_second_text ) {
-			$style .="body .separator-one .outline-btn { color: {".sanitize_hex_color( $rhea_top_cta_second_text )."} !important; }";
+			$style .="body .separator-one .outline-btn { color: ".sanitize_hex_color( $rhea_top_cta_second_text )." !important; }";
 		}
 		if ( $rhea_top_cta_second_text_hover ) {
-			$style .="body .separator-one .outline-btn:hover { color: {".sanitize_hex_color( $rhea_top_cta_second_text_hover )."} !important; }";
+			$style .="body .separator-one .outline-btn:hover { color: ".sanitize_hex_color( $rhea_top_cta_second_text_hover )." !important; }";
 		}
-
 		// Bottom CTA Section
 		$rhea_bottom_cta_border = get_theme_mod( 'rhea_bottom_cta_button_border', '#fff' );
 		$rhea_bottom_cta_background = get_theme_mod( 'zerif_ribbonright_button_background_hover', '#fff' );
-
 		if ( $rhea_bottom_cta_border ) {
-			$style .="body .purchase-now .outline-btn { border-color: {".sanitize_hex_color( $rhea_bottom_cta_border )."} !important; }";
+			$style .="body .purchase-now .outline-btn { border-color: ".sanitize_hex_color( $rhea_bottom_cta_border )." !important; }";
 		}
 		if ( $rhea_bottom_cta_background ) {
-			$style .="body .purchase-now .outline-btn:hover { border-color: {".sanitize_hex_color( $rhea_bottom_cta_background )."} !important; }";
+			$style .="body .purchase-now .outline-btn:hover { border-color: ".sanitize_hex_color( $rhea_bottom_cta_background )." !important; }";
 		}
-
 	}
+
 	$style .= '</style>';
 	echo $style;
 
@@ -258,14 +245,7 @@ add_filter( 'customizer_widgets_section_args', 'rhea_change_sidebar_customizer_a
 
 function rhea_change_sidebar_customizer_args( $section_args ) {
 
-	$currentTheme = wp_get_theme();
-	$currentThemeName = $currentTheme->parent();
-
-	if ( $currentThemeName == 'Zerif PRO' ) {
-		$panel_about = 'panel_6';
-	}else{
-		$panel_about = 'panel_about';
-	}
+	$panel_about = 'panel_about';
 
 	if ( $section_args['sidebar_id'] == 'sidebar-aboutus' ) {
 		$section_args['title'] = esc_html__( 'Clients section', 'rhea' );
@@ -289,6 +269,12 @@ function rhea_add_extra_class( $classes ) {
 		$classes[] = 'rhea-front-page';
 	}
 
+	$currentTheme = wp_get_theme();
+	$currentThemeName = $currentTheme->parent();
+	if ( $currentThemeName == 'Zerif PRO' && is_front_page() ) {
+		$classes[] = 'rhea-front-page';
+	}
+
 	return $classes;
 
 }
@@ -302,16 +288,16 @@ function rhea_primary_navigation_function() { ?>
 
 function rhea_big_title_text_function() {
 
-	$zerif_bigtitle_title = get_theme_mod('zerif_bigtitle_title',__('<strong>Rhea</strong> is super awesome','rhea'));
+	$zerif_bigtitle_title = get_theme_mod( 'zerif_bigtitle_title_2', __('<strong>Rhea</strong> is super awesome','rhea') );
 	if( !empty($zerif_bigtitle_title) ):
-		echo '<h1 class="intro-text">'.wp_kses_post( $zerif_bigtitle_title ).'</h1>';
+		echo '<h1 class="intro-text">' . wp_kses_post( $zerif_bigtitle_title ) . '</h1>';
 	elseif ( isset( $wp_customize ) ):
 		echo '<h1 class="intro-text zerif_hidden_if_not_customizer"></h1>';
 	endif;	
 
-	$rhea_bigtitle_description = get_theme_mod('rhea_description',__('And is build on <u>Zerif Lite</u> the most popular one page theme from WordPress.org','rhea'));
+	$rhea_bigtitle_description = get_theme_mod( 'rhea_description', __('And is build on <u>Zerif Lite</u> the most popular one page theme from WordPress.org','rhea') );
 	if( !empty($rhea_bigtitle_description) ):
-		echo '<p class="intro-description">'.wp_kses_post( $rhea_bigtitle_description ).'</p>';
+		echo '<p class="intro-description">' . wp_kses_post( $rhea_bigtitle_description ) . '</p>';
 	elseif ( isset( $wp_customize ) ):
 		echo '<p class="intro-description zerif_hidden_if_not_customizer"></p>';
 	endif;
@@ -320,12 +306,17 @@ function rhea_big_title_text_function() {
 
 add_action( 'zerif_after_header', 'rhea_show_subheader' );
 function rhea_show_subheader(){
-	if ( is_front_page() && !is_home() ) {
+	$currentTheme = wp_get_theme();
+	$currentThemeName = $currentTheme->parent();
+	if ( ( is_front_page() && !is_home() ) || ( $currentThemeName == 'Zerif PRO' && is_front_page() ) ) {
 		get_template_part( 'subheader' );
 	}
 }
 function rhea_show_menu_or_burger(){
-	if ( is_front_page() && !is_home() ) {
+	$currentTheme = wp_get_theme();
+	$currentThemeName = $currentTheme->parent();
+
+	if ( ( is_front_page() && !is_home() ) || ( $currentThemeName == 'Zerif PRO' && is_front_page() ) ) {
 		rhea_show_burger_for_lateral_menu();
 	}else{
 		zerif_primary_navigation_function();
@@ -348,7 +339,16 @@ function rhea_show_burger_for_lateral_menu(){
 
 add_action( 'rhea_output_menu', 'rhea_primary_navigation_function' );
 
-add_action( 'zerif_top_body', 'rhea_show_full_nav' );
+$currentTheme = wp_get_theme();
+$currentThemeName = $currentTheme->parent();
+
+if ( $currentThemeName == 'Zerif PRO' ) {
+	add_action( 'zerif_before_header', 'rhea_show_full_nav' );
+}else{
+	add_action( 'zerif_top_body', 'rhea_show_full_nav' );
+}
+
+
 function rhea_show_full_nav(){
 
 	if ( !is_front_page() ) {

@@ -5,7 +5,7 @@
  Author:       George Ciobanu
  Author URI:   https://profiles.wordpress.org/giucu91
  Template:     zerif-lite
- Version:      1.0.1
+ Version:      1.0.5
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         one-column, two-columns, right-sidebar,full-width-template,rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, footer-widgets, portfolio, e-commerce, blog
@@ -142,14 +142,15 @@ p.intro-description {
 }
 .fill-button,
 .fill-button:visited,
-.btn-primary {
+.btn-primary,
+.separator-one .green-btn {
 	background: #2bb6b6;
 	color: #fff;
 }
 .fill-button:hover,
 .btn-primary:hover {
 	background-color: #fff;
-	color: #2bb6b6;
+	color: #2bb6b6 !important;
 }
 .outline-btn {
 	background-color: transparent;
@@ -159,13 +160,16 @@ p.intro-description {
 .outline-btn:hover {
 	background-color: #2bb6b6;
 	border-color: #2bb6b6;
-	color: #fff;
+	color: #fff !important;
 }
 #sticky-header .navbar-inverse .navbar-nav > li {
   margin-top: 0;
 }
 #sticky-header .container {
-  position: relative;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /*.site-menu {
     position: absolute;
@@ -1164,7 +1168,7 @@ body .separator-one .green-btn:hover {
   padding-bottom: 50px;
 }
 .footer-widget-wrap .widget .widget-title {
-	color: #404040;
+	color: #404040 !important;
     font-weight: 300;
     margin-top: 0;
     padding-bottom: 0;
@@ -1463,6 +1467,7 @@ article .posted-on a:hover {
     width: 100%;
     background: transparent;
     box-shadow: none;
+    /*z-index: initial;*/
 }
 .rhea-front-page div#main-nav .container {
   position: relative;

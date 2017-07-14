@@ -38,7 +38,7 @@ echo '<div class="' . ( !empty( $zerif_slider_shortcode ) ? 'home-slider-plugin'
 
 	    } elseif ( current_user_can( 'edit_theme_options' ) ) {
 
-		    $zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label_2', __( 'Customize this button', 'zerif-lite' ) );
+		    $zerif_bigtitle_redbutton_label = get_theme_mod( 'zerif_bigtitle_redbutton_label_2', __( 'Customize this button', 'rhea' ) );
 
 	    } else {
 
@@ -50,7 +50,7 @@ echo '<div class="' . ( !empty( $zerif_slider_shortcode ) ? 'home-slider-plugin'
 
 		    $zerif_bigtitle_redbutton_url = get_theme_mod( 'zerif_bigtitle_redbutton_url', admin_url( 'customize.php?autofocus&#91;control&#93;=zerif_bigtitle_redbutton_url' ) );
 
-		    $zerif_bigtitle_greenbutton_label = get_theme_mod( 'zerif_bigtitle_greenbutton_label', __( "Customize this button", 'zerif-lite' ) );
+		    $zerif_bigtitle_greenbutton_label = get_theme_mod( 'zerif_bigtitle_greenbutton_label', __( "Customize this button", 'rhea' ) );
 
 		    $zerif_bigtitle_greenbutton_url = get_theme_mod( 'zerif_bigtitle_greenbutton_url', esc_url( admin_url( 'customize.php?autofocus&#91;control&#93;=zerif_bigtitle_greenbutton_url' ) ) );
 
@@ -72,21 +72,21 @@ echo '<div class="' . ( !empty( $zerif_slider_shortcode ) ? 'home-slider-plugin'
 
 		    if ( ! empty( $zerif_bigtitle_redbutton_label ) && ! empty( $zerif_bigtitle_redbutton_url ) ):
 
-			    echo '<a href="' . esc_url( $zerif_bigtitle_redbutton_url ) . '" class="btn btn-primary custom-button fill-button hero-left-button">' . wp_kses_post( $zerif_bigtitle_redbutton_label ) . '</a>';
+			    echo '<a href="' . esc_url( $zerif_bigtitle_redbutton_url ) . '" class="btn btn-primary red-btn custom-button fill-button hero-left-button">' . wp_kses_post( $zerif_bigtitle_redbutton_label ) . '</a>';
 
             elseif ( is_customize_preview() ):
 
-			    echo '<a href="" class="btn btn-primary custom-button zerif_hidden_if_not_customizer hero-left-button"></a>';
+			    echo '<a href="" class="btn btn-primary red-btn custom-button zerif_hidden_if_not_customizer hero-left-button"></a>';
 
 		    endif;
 
 		    if ( ! empty( $zerif_bigtitle_greenbutton_label ) && ! empty( $zerif_bigtitle_greenbutton_url ) ):
 
-			    echo '<a href="' . esc_url( $zerif_bigtitle_greenbutton_url ) . '" class="btn btn-primary custom-button outline-btn hero-right-button">' . wp_kses_post( $zerif_bigtitle_greenbutton_label ) . '</a>';
+			    echo '<a href="' . esc_url( $zerif_bigtitle_greenbutton_url ) . '" class="btn btn-primary green-btn custom-button outline-btn hero-right-button">' . wp_kses_post( $zerif_bigtitle_greenbutton_label ) . '</a>';
 
             elseif ( is_customize_preview() ):
 
-			    echo '<a href="" class="btn btn-primary custom-button zerif_hidden_if_not_customizer hero-right-button"></a>';
+			    echo '<a href="" class="btn btn-primary green-btn custom-button zerif_hidden_if_not_customizer hero-right-button"></a>';
 
 		    endif;
 
